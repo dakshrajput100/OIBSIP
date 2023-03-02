@@ -1,0 +1,72 @@
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Daksh Kumar */
+body {
+	font-family: Arial, sans-serif;
+}
+
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+nav li:last-child {
+	margin-right: 0;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+}
+
+main {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 20px 0;
+}
+
+.col-3 {
+	flex-basis: 25%;
+	padding: 0 10px;
+}
+
+.col-4 {
+	flex-basis: 33.33%;
+	padding: 0 10px;
+}
+
+.col-6 {
+	flex-basis: 50%;
+	padding: 0 10px;
+}
+
+section {
+	border: 1px solid #ccc;
+	padding: 20px;
+}
+
+footer {
+	background-color: #333
