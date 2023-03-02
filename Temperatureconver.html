@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Temperature Converter</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+		form {
+			margin: 20px;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			display: inline-block;
+		}
+		input[type=number] {
+			width: 100px;
+			padding: 5px;
+			margin: 10px;
+			border-radius: 3px;
+			border: 1px solid #ccc;
+		}
+		input[type=submit] {
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 3px;
+			padding: 10px;
+			margin-top: 10px;
+			cursor: pointer;
+		}
+		.result {
+			font-size: 20px;
+			font-weight: bold;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<!-- Daksh Kumar -->
+<body>
+	<form>
+		<label for="celsius">Enter temperature in Celsius:</label>
+		<input type="number" id="celsius" placeholder="Celsius">
+
+		<label for="fahrenheit">Enter temperature in Fahrenheit:</label>
+		<input type="number" id="fahrenheit" placeholder="Fahrenheit">
+
+		<input type="submit" value="Convert">
+	</form>
+
+	<div class="result" id="result"></div>
+
+	<script>
+		var celsiusInput = document.getElementById("celsius");
+		var fahrenheitInput = document.getElementById("fahrenheit");
+		var resultDiv = document.getElementById("result");
+
+		function convertToFahrenheit(celsius) {
+			return (celsius * 9/5) + 32;
+		}
+
+		function convertToCelsius(fahrenheit) {
+			return (fahrenheit - 32) * 5/9;
+		}
+
+		function handleSubmit(event) {
+			event.preventDefault(); // prevent form from submitting
+
+			if (celsiusInput.value) {
+				var celsius = parseFloat(celsiusInput.value);
+				var fahrenheit = convertToFahrenheit(celsius);
+				resultDiv.innerText = celsius + " Celsius = " + fahrenheit.toFixed(2) + " Fahrenheit";
+			} else if (fahrenheitInput.value) {
+				var fahrenheit = parseFloat(fahrenheitInput.value);
+				var celsius = convertToCelsius(fahrenheit);
+				resultDiv.innerText = fahrenheit + " Fahrenheit = " + celsius.toFixed(2) + " Celsius";
+			} else {
+				alert("Please enter a temperature.");
+			}
+		}
+
+		document.querySelector('form').addEventListener('submit', handleSubmit);
+	</script>
+</body>
+</html>
